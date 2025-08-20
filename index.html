@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-g">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scholarship Game Plan</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -58,6 +58,7 @@
 
     <div class="min-h-screen p-4 sm:p-6 lg:p-8">
         <div class="grid grid-cols-12 gap-6">
+            <!-- Sidebar Navigation -->
             <aside class="col-span-12 lg:col-span-2">
                 <div class="p-4 rounded-xl glass-panel sticky top-6">
                     <h1 class="text-2xl font-bold mb-6">Game Plan</h1>
@@ -73,12 +74,15 @@
                 </div>
             </aside>
 
+            <!-- Main Content -->
             <main class="col-span-12 lg:col-span-10 space-y-6">
+                <!-- Dashboard -->
                 <section id="dashboard" class="p-6 rounded-xl glass-panel content-section">
                     <h2 class="text-3xl font-bold mb-4">Dashboard</h2>
                     <div id="dashboard-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
                 </section>
 
+                <!-- Scholarships -->
                 <section id="scholarships" class="p-6 rounded-xl glass-panel content-section hidden">
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-3xl font-bold">Scholarships</h2>
@@ -87,6 +91,7 @@
                     <div id="scholarships-list" class="space-y-4"></div>
                 </section>
 
+                <!-- Timeline -->
                 <section id="timeline" class="p-6 rounded-xl glass-panel content-section hidden">
                      <div class="flex justify-between items-center mb-4">
                         <h2 class="text-3xl font-bold">Timeline</h2>
@@ -95,6 +100,7 @@
                     <div id="timeline-list"></div>
                 </section>
                 
+                <!-- Daily Routine -->
                 <section id="routine" class="p-6 rounded-xl glass-panel content-section hidden">
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-3xl font-bold">Daily Routine</h2>
@@ -103,6 +109,7 @@
                     <div id="routine-list" class="space-y-2"></div>
                 </section>
 
+                <!-- Document Checklist -->
                 <section id="documents" class="p-6 rounded-xl glass-panel content-section hidden">
                      <div class="flex justify-between items-center mb-4">
                         <h2 class="text-3xl font-bold">Document Checklist</h2>
@@ -111,6 +118,7 @@
                     <div id="documents-list" class="space-y-2"></div>
                 </section>
 
+                <!-- Contacts & Notes -->
                 <section id="contacts" class="p-6 rounded-xl glass-panel content-section hidden">
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-3xl font-bold">Contacts & Notes</h2>
@@ -119,6 +127,7 @@
                     <div id="contacts-list" class="space-y-4"></div>
                 </section>
 
+                <!-- Live Updates -->
                 <section id="updates" class="p-6 rounded-xl glass-panel content-section hidden">
                     <h2 class="text-3xl font-bold mb-4">Live Updates (Simulated)</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -136,6 +145,7 @@
         </div>
     </div>
 
+    <!-- Modal -->
     <div id="modal" class="modal-backdrop">
         <div class="modal-content">
             <h3 id="modal-title" class="text-2xl font-bold mb-4"></h3>
@@ -147,21 +157,23 @@
         </div>
     </div>
 
+    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     
     <script>
-        // --- START: PASTE YOUR FIREBASE CONFIGURATION HERE ---
+        // --- Your Firebase Configuration ---
         const firebaseConfig = {
-          apiKey: "YOUR_API_KEY",
-          authDomain: "YOUR_AUTH_DOMAIN",
-          projectId: "YOUR_PROJECT_ID",
-          storageBucket: "YOUR_STORAGE_BUCKET",
-          messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-          appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyDO5Pvx0V958-866WWNTJQYanqLJVVMOqw",
+            authDomain: "scholarshipgame-8cfdc.firebaseapp.com",
+            projectId: "scholarshipgame-8cfdc",
+            storageBucket: "scholarshipgame-8cfdc.firebasestorage.app",
+            messagingSenderId: "470647881744",
+            appId: "1:470647881744:web:4635085d793e6576c60a95",
+            measurementId: "G-5H0VGG967N"
         };
-        // --- END: PASTE YOUR FIREBASE CONFIGURATION HERE ---
+        // --- End of Firebase Configuration ---
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
